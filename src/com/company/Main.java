@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -43,4 +45,29 @@ public class Main {
 
         return reversed;
     }
+
+    public static String findLongestString(String[] strArr) {
+        String longest = strArr[0];
+
+        for (int i = 0; i < strArr.length; i++) {
+            if (strArr[i].length() > longest.length()) {
+                longest = strArr[i];
+            }
+        }
+
+        return longest;
+    }
+
+     public static String[] filterLongestWords(int limiter, String[] strArr) {
+        ArrayList<String> filtered = new ArrayList<>();
+
+        for (int i = 0; i < strArr.length; i++) {
+            if (strArr[i].length() >= limiter) {
+                filtered.add(strArr[i]);
+            }
+        }
+        String[] retFiltered = new String[filtered.size()];
+        retFiltered = filtered.toArray(retFiltered);
+        return retFiltered;
+     }
 }

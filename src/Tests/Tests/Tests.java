@@ -41,4 +41,16 @@ public class Tests {
     public void testReverseString() {
         assertEquals("gninrom eht ni esrever ot tseb si ti", Main.reverseString("it is best to reverse in the morning"));
     }
+
+    // Bonus
+    @Test
+    public void testFindLongestWord() {
+        assertEquals("longest", Main.findLongestString(new String[]{"when", "harry", "longest", "met", "sally"}));
+        assertEquals("three", Main.findLongestString(new String[]{"one", "two", "three", "four", "five"}));
+    }
+
+     @Test
+     public void testFilterLongestWords() {
+        assertEquals(new String[]{"three", "longest", "words"}, Main.filterLongestWords(5, new String[]{"one", "two", "three", "longest", "words"}));
+     }
 }
